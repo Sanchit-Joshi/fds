@@ -1,8 +1,4 @@
-#Aaradhya Kulkarni SE_COMP
-#Batch__SA3
-#rollno__58
-#assignment_1_DSL
-#18_SEPT_23
+
 def remove_duplicates(lst):
     list1=[]
     for val in lst:
