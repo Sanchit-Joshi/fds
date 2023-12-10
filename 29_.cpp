@@ -1,5 +1,5 @@
 #include<iostream>
-#include<string>5
+#include<string>
 using namespace std;
 
 class JobQueue{
