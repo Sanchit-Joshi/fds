@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <stack>
 #include <string>
@@ -60,7 +61,8 @@ int evaluatePostfix(string postfix) {
     stack<int> s;
     
     for (char c : postfix) {
-        if (isdigit(c)) {
+        if(c == ' ') continue;
+        else if (isdigit(c)) {
             s.push(c - '0');
         }
         else if (isOperator(c)) {
@@ -92,7 +94,7 @@ int evaluatePostfix(string postfix) {
 int main() {
     string infix;
     cout << "Enter an infix expression: ";
-    cin >> infix;
+    cin>>infix;
     
     string postfix = infixToPostfix(infix);
     cout << "Postfix expression: " << postfix << endl;
