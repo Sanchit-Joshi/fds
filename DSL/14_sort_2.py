@@ -8,32 +8,33 @@ def create_arr():
 	return arr
 	
 def insertion_sort(arr):
-	n=len(arr)
+	n = len(arr)
 	for i in range(1,n):
-		temp=arr[i]
-		j=i-1
-		while(j>=0 and arr[j]>temp):
-			arr[j+1]=arr[j]
+		key = arr[i]
+		j = i-1
+		while j>=0 and key<arr[j]:
+			arr[j+1] = arr[j]
 			j-=1
-			
-		arr[j+1]=temp
-	
+		arr[j+1] = key
 	return arr
+
 	
 def shell_sort(arr):
-	n=len(arr)
-	interval = n//2
-	
-	while interval > 0:
-		for i in range(interval,n):
-			temp=arr[i]
-			j=i
-			while(j>=interval and arr[j-interval]>temp):
-				arr[j]=arr[j-interval]
-				j -= interval
-			arr[j]=temp
-		interval //=2
-	return arr	
+    n = len(arr)
+    interval = n // 2
+
+    while interval > 0:
+        for i in range(interval, n):
+            temp = arr[i]
+            j = i
+            while j >= interval and arr[j - interval] > temp:
+                arr[j] = arr[j - interval]
+                j -= interval
+            arr[j] = temp
+
+        interval //= 2
+
+    return arr
 
 print("-------WELCOME--------")
 print("Enter unsorted list")
