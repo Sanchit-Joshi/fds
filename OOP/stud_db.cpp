@@ -123,22 +123,9 @@ person *p1 , *p2;
 int ch;
 p1=new person; //memory allocation
 p2=new person(p1); // copy constructor
-    cout<<"\tName";
-    cout<<"\tDob";
-    cout<<"\tBlood";
-    cout<<"\tHt";
-    cout<<"\tWt";
-    cout<<"\tAddress";
-    cout<<"\tLicense";
-    cout<<"\tInsurance";
-    cout<<"\tContact";
-    cout<<endl;cout<<"Default Constructor Value \n";
-    p1->display();
-    cout<<"\n";
-    cout<<"Copy Constructor Value \n";
-    p2->display();
+   
 int n;
-    cout<<"\nEnter how many records you want??";
+    cout<<"\nEnter number of records you want to enter: ";
     cin>>n;
 person p3[n];
 

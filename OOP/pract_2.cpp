@@ -132,6 +132,7 @@ int main() {
         cout << "Enter name: ";
         cin.ignore();
         getline(cin, name);
+
         cout << "Enter roll number: ";
         cin >> rollNumber;
 
@@ -150,21 +151,27 @@ int main() {
         cout << "Enter class: ";
         cin.ignore();
         getline(cin, className);
+
         cout << "Enter division: ";
         getline(cin, division);
+
         cout << "Enter date of birth: ";
         getline(cin, dateOfBirth);
+
         cout << "Enter blood group: ";
         getline(cin, bloodGroup);
+
         cout << "Enter contact address: ";
         getline(cin, contactAddress);
+
         cout << "Enter telephone number: ";
         getline(cin, telephoneNumber);
+
         cout << "Enter driving license number: ";
         getline(cin, drivingLicenseNo);
 
-        Student student(name, rollNumber, className, division, dateOfBirth, bloodGroup, contactAddress, telephoneNumber, drivingLicenseNo);
-        db->addStudent(student, numRecords);
+        Student newstudent(name, rollNumber, className, division, dateOfBirth, bloodGroup, contactAddress, telephoneNumber, drivingLicenseNo);
+        db->addStudent(newstudent, numRecords);
         numRecords++;
         break;
       }
