@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
+#include<stdexcept>
 using namespace std;
 
 class Student {
 private:
-  string name;
+  string name;  
   int rollNumber;
   string className;
   string division;
@@ -78,7 +79,7 @@ public:
 
 class Database {
 private:
-  Student* students;
+  Student* students; //dynamic array of students
   int size;
 
 public:
@@ -137,11 +138,13 @@ int main() {
         // Exception handling to check if roll number is a natural number
         try {
           if (rollNumber <= 0) {
-            throw invalid_argument("Roll number must be a natural number");
+            throw runtime_error("Roll number must be a natural number.");
           }
-        } catch (const invalid_argument& e) {
+        } 
+        catch (const exception &e) {
           cout << "Exception: " << e.what() << endl;
-          break;
+          
+          rollNumber = 0;
         }
 
         cout << "Enter class: ";
@@ -169,7 +172,7 @@ int main() {
         db->displayAllStudents();
         break;
       case 3:
-        delete db;
+        delete db; // Delete the database
         return 0;
       default:
         cout << "Invalid choice. Please try again." << endl;
