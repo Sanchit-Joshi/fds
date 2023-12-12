@@ -9,7 +9,7 @@ def create_arr():
 	
 def bubble_sort(arr):
 	n=len(arr)
-	for i in range(0,n-1):
+	for i in range(0,5):
 		for j in range(n-1-i):
 			if arr[j]>arr[j+1]:
 				temp=arr[j]
@@ -18,17 +18,15 @@ def bubble_sort(arr):
 	return arr
 	
 def selection_sort(arr):
-	n=len(arr)
+	n = len(arr)
 	for i in range(n-1):
-		min=i
+		min = i
 		for j in range(i+1,n):
 			if arr[j]<arr[min]:
-				min=j
-			
-		
-		temp=arr[i]
-		arr[i]=arr[min]
-		arr[min]=temp
+				min =j
+		temp = arr[i]
+		arr[i] = arr[min]
+		arr[min] = temp
 
 	return arr
 	

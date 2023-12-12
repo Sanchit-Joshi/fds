@@ -1,6 +1,7 @@
 def create_arr():
 	arr=[]
-	n=int(input("Enter number of students"))
+	n=int(input("Enter number of students: "))
+	print("Enter the roll no. of",n,"students : ")
 	for i in range(n):
 		ele=int(input())
 		arr.append(ele)
@@ -31,12 +32,9 @@ def sentinal_search(arr,x):
 	arr[n-1]=last
 	
 	if ((i < n - 1) or (arr[n - 1] == x)):
-        	print("Present")
+		print("Present")
 	else:
 		print("Absent")
-			
-
-		
 			
 
 attendance= create_arr()

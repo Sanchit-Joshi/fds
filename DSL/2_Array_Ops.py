@@ -96,5 +96,3 @@ while ch=="y":
 		
 	print("Continue?     *y/n*")
 	ch=input()
-	
-				

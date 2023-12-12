@@ -1,4 +1,3 @@
-
 def remove_duplicates(lst):
     list1=[]
     for val in lst:
