@@ -3,12 +3,12 @@
 #include <string>
 using namespace std;
 
-class Map
+class Maps
 {
     string name;
     float population;
 public:
-    Map()
+    Maps()
     {
         name="None";
         population=0.0;
@@ -42,12 +42,12 @@ int main()
     string s;
     float f;
 
-    Map mobj;
-    map <string,float> sp_map;
+    Maps  mobj; //object of class Map
+    map <string,float> sp_map;  //map of string and float
     map <string,float>::iterator sp_it;
 
     cout<<"\t****WELCOME TO STATE AND POPULATION STATS****"<<endl;
-    do
+    while(true)
     {
         cout<<"\n     Menu";
         cout<<"\n1)Insert Record.\n2)Delete Record.\n3)Display All Records.\n4)Exit.";
@@ -96,7 +96,7 @@ int main()
                     while(sp_it != sp_map.end())
                     {
                         cout<<"\n------ Record "<<i<<" -------";
-                        cout<<"\nName of state: "<<sp_it->first;
+                        cout<<"\nName of state: "<<sp_it->first; //sp_it->first is the key and sp_it->second is the value
                         cout<<"\nPopulation: "<<sp_it->second<<" crores"<<endl;
                         i++; sp_it++;
                     }
@@ -107,8 +107,9 @@ int main()
         case 4: break;
 
         default: cout<<"\nPlease enter valid choice!!";
+                break;
         }
-    }while(ch!=4);
+    }
 
 cout<<"\n\tThank You!\n   Please visit again.";
 return 0;

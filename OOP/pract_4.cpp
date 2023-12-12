@@ -44,14 +44,14 @@ int main(){
     file.open("demo.txt", ios::out);
     for(i=0;i<n;i++){
         o[i].accept();
-        file.write((char *)&o[i],sizeof(o[i]));
+        file.write((char *)&o[i] , sizeof(o[i]));
     }
 
     file.close();
 
     file.open("demo.txt", ios::in);
     for(i=0;i<n;i++){
-        file.read((char *)&o[i],sizeof(o[i]));
+        file.read((char *)&o[i] , sizeof(o[i]));
         o[i].display();
     }
 

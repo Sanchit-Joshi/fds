@@ -6,6 +6,7 @@ using namespace std;
 
 
 
+
 template <class T>
 void selection_sort( T *array, int n){
 
@@ -37,8 +38,8 @@ void selection_sort( T *array, int n){
 int main(){
     int ch;
     int n;
-    int *s1 = nullptr;
-    float *s2 = nullptr;
+    int *s1 = NULL;
+    float *s2 = NULL;
     cout<<"Welcome\n"<<"1.Enter Integers\n"<<"2.Enter Float numbers\n"<<"3.exit\n\n"<<"Enter choice: ";
     cin>>ch;
     switch(ch) {
