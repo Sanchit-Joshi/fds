@@ -1,10 +1,11 @@
 #include <iostream>
 #include <string>
+#include<stdexcept>
 using namespace std;
 
 class Student {
 private:
-  string name;
+  string name;  
   int rollNumber;
   string className;
   string division;
@@ -78,7 +79,7 @@ public:
 
 class Database {
 private:
-  Student* students;
+  Student* students; //dynamic array of students
   int size;
 
 public:
@@ -131,37 +132,46 @@ int main() {
         cout << "Enter name: ";
         cin.ignore();
         getline(cin, name);
+
         cout << "Enter roll number: ";
         cin >> rollNumber;
 
         // Exception handling to check if roll number is a natural number
         try {
           if (rollNumber <= 0) {
-            throw invalid_argument("Roll number must be a natural number");
+            throw runtime_error("Roll number must be a natural number.");
           }
-        } catch (const invalid_argument& e) {
+        } 
+        catch (const exception &e) {
           cout << "Exception: " << e.what() << endl;
-          break;
+          
+          rollNumber = 0;
         }
 
         cout << "Enter class: ";
         cin.ignore();
         getline(cin, className);
+
         cout << "Enter division: ";
         getline(cin, division);
+
         cout << "Enter date of birth: ";
         getline(cin, dateOfBirth);
+
         cout << "Enter blood group: ";
         getline(cin, bloodGroup);
+
         cout << "Enter contact address: ";
         getline(cin, contactAddress);
+
         cout << "Enter telephone number: ";
         getline(cin, telephoneNumber);
+
         cout << "Enter driving license number: ";
         getline(cin, drivingLicenseNo);
 
-        Student student(name, rollNumber, className, division, dateOfBirth, bloodGroup, contactAddress, telephoneNumber, drivingLicenseNo);
-        db->addStudent(student, numRecords);
+        Student newstudent(name, rollNumber, className, division, dateOfBirth, bloodGroup, contactAddress, telephoneNumber, drivingLicenseNo);
+        db->addStudent(newstudent, numRecords);
         numRecords++;
         break;
       }
@@ -169,7 +179,7 @@ int main() {
         db->displayAllStudents();
         break;
       case 3:
-        delete db;
+        delete db; // Delete the database
         return 0;
       default:
         cout << "Invalid choice. Please try again." << endl;
